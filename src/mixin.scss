@@ -29,5 +29,8 @@
      -moz-animation-fill-mode: $direction;
        -o-animation-fill-mode: $direction;
           animation-fill-mode: $direction;
-          transition-timing-function: $timing;
+ -webkit-animation-timing-function: $timing;
+    -moz-animation-timing-function: $timing;
+      -o-animation-timing-function: $timing;
+         animation-timing-function: $timing;
 }
