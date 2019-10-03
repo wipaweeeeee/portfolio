@@ -1,44 +1,27 @@
-body, html, p {
-  margin: 0;
-  padding: 0;
-}
-
 @font-face {
   font-family: 'TitlingGothicFBExtendedBlack';
   src: url('./assets/fonts/TitlingGothicFBExtendedBlac.woff') format('woff'); /* Pretty Modern Browsers */
 }
 
+@font-face {
+    font-family: 'lunchtype22regular';
+    src: url('./assets/fonts/lunchtype22-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
 
-.App {
-  text-align: center;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-  pointer-events: none;
+body, html, p {
+  margin: 0;
+  padding: 0;
+  font-family: lunchtype22regular;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+a {
+  text-decoration: none;
+  color: black;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+a:hover {
+  background: linear-gradient(to top, #CCFF00 50%, transparent 50%);
 }
