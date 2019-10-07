@@ -1,15 +1,31 @@
 import React, { useState } from 'react';
 import styles from './landing.module.scss';
+import classNames from 'classnames';
 import Randomizer from '../randomizer/Randomizer';
 import cc from '../../assets/images/cc.gif';
 import vb from '../../assets/images/vb.jpg';
 import f50 from '../../assets/images/f50.png';
+import ProjectCarousel from '../carousel/ProjectCarousel';
+
+let array = {images: [f50, vb, cc], name: "2019 | frog 50", legend: "AR (Unity, Vuforia), C4D, iOS"};
 
 const Landing = (props) => {
 	const [ project, setProject ] = useState();
+	const [ content, setContent] = useState();
+	const [ name, setName ] = useState();
+	const [ legend, setLegend ] = useState();
 
 	const handleShowProject = (e, project) => {
 		setProject(project);
+		setContent(null);
+		setName(null);
+		setLegend(null);
+	}
+
+	const handleClick = (e, content) => {
+		setContent(content.images);
+		setName(content.name);
+		setLegend(content.legend);
 	}
 
 	return (
@@ -28,13 +44,21 @@ const Landing = (props) => {
 
 			<div className={styles.nav}>
 				<ul>
-					<li><a href="" onMouseOver={(e) => handleShowProject(e, f50)}>frog50</a></li>
-					<li><a href="" onMouseOver={(e) => handleShowProject(e, vb)}>VB x Reebok</a></li>
-					<li><a href="" onMouseOver={(e) => handleShowProject(e, vb)}>Reebok</a></li>
-					<li><a href="" onMouseOver={(e) => handleShowProject(e, cc)}>Creative Coding</a></li>
-					<li><a href="">Project Flamingo</a></li>
-					<li><a href="">Blink of an Eye</a></li>
-					<li><a href="">Call me Adele</a></li>
+					<li>
+						<a 
+							onClick={(e) => handleClick(e, array)} 
+							onMouseOver={(e) => handleShowProject(e, f50)}
+							className={classNames({"selected" : content != null})}
+						>
+							frog50
+						</a>
+					</li>
+					<li><a onMouseOver={(e) => handleShowProject(e, vb)}>VB x Reebok</a></li>
+					<li><a onMouseOver={(e) => handleShowProject(e, vb)}>Reebok</a></li>
+					<li><a onMouseOver={(e) => handleShowProject(e, cc)}>Creative Coding</a></li>
+					<li><a>Project Flamingo</a></li>
+					<li><a>Blink of an Eye</a></li>
+					<li><a>Call me Adele</a></li>
 				</ul>
 			</div>
 
@@ -44,10 +68,13 @@ const Landing = (props) => {
 				CV | GH | IG
 			</div>
 		</div>
-		<div className={styles.images}>
-			<div className={styles.projectImage}>
-				<img src={project} />
-			</div>
+		<div className={classNames(styles.images, { [styles.carousel] : content != null})}>
+			{ content == null && 
+				<div className={styles.projectImage}>
+					<img src={project} />
+				</div>
+			}
+			<ProjectCarousel content={content} name={name} legend={legend}/>
 			<Randomizer/>
 		</div>
 		</div>

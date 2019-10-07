@@ -22,6 +22,6 @@ a {
   color: black;
 }
 
-a:hover {
+a:hover, .selected {
   background: linear-gradient(to top, #CCFF00 50%, transparent 50%);
 }

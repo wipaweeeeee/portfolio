@@ -59,8 +59,11 @@
     align-items: center;
 }
 
+.carousel {
+	flex-direction: column;
+}
+
 .projectImage {
-	margin-top: -60px;
 	img {
 		width: 100%;
 	}
