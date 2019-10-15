@@ -4,7 +4,13 @@ import "./ProjectCarousel.scss";
 
 const ProjectCarousel = (props) => {
 	let content = props.content && props.content.map((item, index) => {
-		return <div key={index}><img src={item} /></div>
+		return ( 
+			<div key={index}>
+				{item.type == "image" && <img src={item.src} />}
+				{item.type == "html" && <div>{item.src}</div>}
+			</div> 
+
+		)
 	})
 
 	return (
