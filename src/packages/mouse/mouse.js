@@ -4,13 +4,19 @@ import styles from './mouse.module.scss';
 import classNames from 'classnames';
 
 const Mouse = (props) => {
-	const [ showMouse, setShowMouse ] = useState(true);
+	const [ showMouse, setShowMouse ] = useState();
 	const [ mouse, setMouse ] = useState({x: 0, y: 0});
 
 	useEffect(() => {
 
 		const handleMouse = (e) => {
 			setMouse({x: e.clientX - 95, y: e.clientY});
+
+			if (e.clientX > window.innerWidth / 2) {
+				setShowMouse(true);
+			} else {
+				setShowMouse(false);
+			}
 		}
 
 		document.addEventListener('mousemove', handleMouse);

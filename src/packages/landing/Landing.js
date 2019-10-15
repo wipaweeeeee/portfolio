@@ -14,12 +14,13 @@ let array = {
 		  type: "image"
 		},
 		{
-		  src: <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</div>,
+		  title: "frog50",
+		  description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
 		  type: "html"
 		},
 		{
-		  src: vb,
-		  type: "image"
+		  src: "https://wipawe-portfolio.s3.amazonaws.com/f50.mp4",
+		  type: "video"
 		}
 	], 
 	name: "2019 | frog 50", 
@@ -66,7 +67,7 @@ const Landing = (props) => {
 						<a 
 							onClick={(e) => handleClick(e, array)} 
 							onMouseOver={(e) => handleShowProject(e, f50)}
-							className={classNames({"selected" : content != null})}
+							className={classNames({"active" : content != null})}
 						>
 							frog50
 						</a>
