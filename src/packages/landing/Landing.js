@@ -1,12 +1,17 @@
 import React, { useState } from 'react';
 import styles from './landing.module.scss';
 import classNames from 'classnames';
+import ProjectCarousel from '../carousel/ProjectCarousel';
+import Mouse from '../mouse/mouse';
 import Randomizer from '../randomizer/Randomizer';
 import cc from '../../assets/images/cc.gif';
 import vb from '../../assets/images/vb.jpg';
-import f50 from '../../assets/images/f50.png';
-import ProjectCarousel from '../carousel/ProjectCarousel';
-import Mouse from '../mouse/mouse';
+import f50 from '../../assets/images/f50/f50.png';
+import wall from '../../assets/images/f50/wall.JPG';
+import tattoo from '../../assets/images/f50/tattoo.gif';
+import magritte from '../../assets/images/f50/ar_2.gif';
+import apple from '../../assets/images/f50/apple.gif';
+import yamaha from '../../assets/images/f50/yamaha.gif';
 
 let array = {
 	images: [
@@ -15,35 +20,46 @@ let array = {
 		},
 		{
 		  title: "frog50",
-		  description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+		  description: "Frog design turns 50 years old in 2019. We kicked off the year-long celebration in Austin, Texas during SXSW. The exhibition we curated included a frog50 AR app, 3 interactive mirrors and a redo (hack) of the original Apple IIc. I was responsible for concept and production of the frog50 app which its main goal is to bring second life to selected pieces from frog’s archive including the Yamaha frog 750, Apple IIc, Renee Magritte’s exhibition at SFMoma and LQD Palo. The augmented content tells back stories and take on each project in new exciting ways. We also made augmented tattoo of friedolin (the frog logo) so people can take it anywhere with them. Hartmut Esslinger (founder of frog) was seen rather delighted while he was playing with the app.",
 		  type: "html"
 		},
 		{
 		  src: "https://wipawe-portfolio.s3.amazonaws.com/f50.mp4",
 		  type: "video"
+		},
+		{ src: wall,
+		  type: "image"
+		},
+		{ src: tattoo,
+		  type: "image"
+		},
+		{ src: apple,
+		  type: "image"
+		},
+		{ src: yamaha,
+		  type: "image"
+		},
+		{ src: magritte,
+		  type: "image"
 		}
+
 	], 
 	name: "2019 | frog 50", 
-	legend: "AR (Unity, Vuforia), C4D, iOS"
+	legend: "AR (Unity, Vuforia), C4D, iOS",
+	app: true
 };
 
 const Landing = (props) => {
 	const [ project, setProject ] = useState();
 	const [ content, setContent] = useState();
-	const [ name, setName ] = useState();
-	const [ legend, setLegend ] = useState();
 
 	const handleShowProject = (e, project) => {
 		setProject(project);
 		setContent(null);
-		setName(null);
-		setLegend(null);
 	}
 
 	const handleClick = (e, content) => {
-		setContent(content.images);
-		setName(content.name);
-		setLegend(content.legend);
+		setContent({content: content.images, name: content.name, legend: content.legend, app: content.app});
 	}
 
 	return (
@@ -51,13 +67,13 @@ const Landing = (props) => {
 		<Mouse />
 		<div className={styles.info}>
 			<div className={styles.intro}>
-				Wipawe here. 
-				[ pronounce wip-pah-wee]
-				People call me Wippy tho.
-				I like to design as much as I like to code. 
+				Wipawe here. <br />
+				[ pronounce wip-pah-wee] <br />
+				<span className="gray">People call me Wippy tho. </span><br />
+				I like to design as much as I like to code. <br />
 				Preferably, I would like to do both at the same time. 
 				People sometimes call this Design Technologist, or 
-				at least that’s what they call me at frog design. 
+				at least that’s what they call me at frog design. <br />
 				You can see some stuff I made here:
 			</div>
 
@@ -82,8 +98,8 @@ const Landing = (props) => {
 			</div>
 
 			<div className={styles.footer}>
-				For more info: 
-				wsirikolkarn@gmail.com
+				For more info: <br />
+				<a href="mailto:wsirikolkarn@gmail.com">wsirikolkarn@gmail.com</a><br />
 				CV | GH | IG
 			</div>
 		</div>
@@ -93,7 +109,7 @@ const Landing = (props) => {
 					<img src={project} />
 				</div>
 			}
-			<ProjectCarousel content={content} name={name} legend={legend}/>
+			{content && <ProjectCarousel content={content.content} name={content.name} legend={content.legend} app={content.app}/>}
 			<Randomizer/>
 		</div>
 		</div>

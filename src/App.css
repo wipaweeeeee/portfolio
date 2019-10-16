@@ -25,3 +25,15 @@ a {
 a:hover, .active {
   background: linear-gradient(to top, #CCFF00 50%, transparent 50%);
 }
+
+a.noLine:hover {
+  background: none;
+}
+
+p {
+  line-height: 1.5em;
+}
+
+.gray {
+  color: #696969;
+}
