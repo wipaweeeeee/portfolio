@@ -1,37 +1,38 @@
 import React from 'react';
 import { Carousel } from 'react-responsive-carousel';
 import "./ProjectCarousel.scss";
-import app from '../../assets/images/dl.png';
 
 const ProjectCarousel = (props) => {
+	console.log(props.legend.legend)
 	let content = props.content && props.content.map((item, index) => {
 		return ( 
-			<div key={index}>
+			<React.Fragment key={index}>
 				{item.type == "image" && <img src={item.src} />}
 				{item.type == "html" && <div style={{padding: '0 32px'}}><h3>{item.title}</h3><p>{item.description}</p></div>}
-				{item.type == "video" && <video controls autoPlay muted><source src={item.src} type="video/mp4"/></video>}
-			</div> 
+				{item.type == "video" && <video autoPlay muted loop><source src={item.src} type="video/mp4"/></video>}
+			</React.Fragment> 
 
 		)
 	})
 
 	return (
-		<div>
+		<div className="carousel-container">
 			<div className="carousel-intro">{props.name}</div>
 			<Carousel 
 				showThumbs={false}
 				infiniteLoop={true}
 				showIndicators={false}
-				showStatus={false}>
+				showStatus={true}>
 	            {content}
 	        </Carousel>
 	        <div className="carousel-legend">
-	        	{props.legend}
-	        	{props.app && 
-	        		<div style={{marginTop: '12px'}}>
-	        			<a href="https://apps.apple.com/us/app/frog50/id1454069979" target="_blank" className="noLine"><img src={app} width="100" height="auto" alt="download on app store"/></a>
-	        		</div> 
-	        	}
+	        	{props.legend.legend}
+        		<div style={{marginTop: '12px'}}>
+        			<a href={props.legend.url} target="_blank" className="noLine center">
+	        			{ props.legend.img && <img src={props.legend.img} width={props.legend.width} height="auto" alt="go to link"/> }
+	        			{props.legend.link}
+        			</a>
+        		</div> 
 	        </div>
 	    </div>
 	)

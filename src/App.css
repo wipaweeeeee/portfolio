@@ -30,6 +30,15 @@ a.noLine:hover {
   background: none;
 }
 
+a.center {
+  display: flex;
+  align-items: center; 
+}
+
+a.center img {
+  margin-right: 8px;
+}
+
 p {
   line-height: 1.5em;
 }
