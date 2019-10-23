@@ -70,3 +70,36 @@
 		width: 100%;
 	}
 }
+
+@media only screen and (max-width: 600px) {
+	.landing {
+		flex-direction: column;
+	}
+
+	.info, .images {
+		width: unset;
+		height: unset;
+		padding: 32px;
+	}
+
+	.nav {
+		position: static;
+		top: unset;
+
+		ul {
+			li {
+				margin: 10px 0;
+
+				a {
+					font-size: 18px;
+				}
+			}
+		}
+	}
+
+	.footer {
+		position: static;
+		bottom: unset;
+		font-size: 12px;
+	}
+}
