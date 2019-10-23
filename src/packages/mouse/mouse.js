@@ -10,9 +10,9 @@ const Mouse = (props) => {
 	useEffect(() => {
 
 		const handleMouse = (e) => {
-			setMouse({x: e.clientX - 95, y: e.clientY});
+			setMouse({x: e.clientX - window.innerWidth/2 - 95, y: e.clientY});
 
-			if (e.clientX > window.innerWidth / 2) {
+			if (e.clientX > window.innerWidth / 2 && props.content != null) {
 				setShowMouse(true);
 			} else {
 				setShowMouse(false);

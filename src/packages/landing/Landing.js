@@ -7,6 +7,7 @@ import Randomizer from '../randomizer/Randomizer';
 import app from '../../assets/images/dl.png';
 import web from '../../assets/images/web.png';
 import gh from '../../assets/images/gh.png';
+import resume from '../../assets/images/wipaweResume.pdf';
 import cc from '../../assets/images/cc.gif';
 import vb from '../../assets/images/vb/vb-intro.png';
 import f50 from '../../assets/images/f50/f50.png';
@@ -293,7 +294,6 @@ const Landing = (props) => {
 
 	return (
 		<div className={styles.landing}>
-		<Mouse />
 		<div className={styles.info}>
 			<div className={styles.intro}>
 				Wipawe here. <br />
@@ -374,10 +374,13 @@ const Landing = (props) => {
 			<div className={styles.footer}>
 				For more info: <br />
 				<a href="mailto:wsirikolkarn@gmail.com">wsirikolkarn@gmail.com</a><br />
-				CV | GH | IG
+				<a href={resume} target="_blank">CV</a> | 
+				<a href="https://github.com/wipaweeeeee" target="_blank"> GH</a> | 
+				<a href="https://www.instagram.com/wipaweeeeee/" target="_blank"> IG</a>
 			</div>
 		</div>
 		<div className={classNames(styles.images, { [styles.carousel] : content != null})}>
+			<Mouse content={content && content.name}/>
 			{ content == null && 
 				<div className={styles.projectImage}>
 					<img src={project} />
