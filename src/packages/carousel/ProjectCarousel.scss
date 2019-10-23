@@ -42,15 +42,6 @@
   background: none;
   border: 0;
   font-size: 32px;
-  // cursor: url('../../assets/images/cursor.png'), auto; 
-  
-  }
-  .carousel .control-arrow:hover {
-    // opacity: 1;
-    // filter: alpha(opacity=100); 
-  }
-  .carousel .control-arrow:before, .carousel.carousel-slider .control-arrow:before {
-    
   }
   .carousel .control-disabled.control-arrow {
     opacity: 0;
@@ -264,3 +255,19 @@
   }
   .carousel:hover .slide .legend {
     opacity: 1; }
+
+@media only screen and (max-width: 600px) { 
+  .carousel-container {
+    width: unset;
+    position: static;
+    top: unset;
+  }
+
+  .carousel.carousel-slider .control-arrow { 
+    top: unset;
+  }
+
+  .carousel .control-next.control-arrow {
+    height: 100%;
+  }
+}
