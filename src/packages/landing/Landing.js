@@ -24,7 +24,22 @@ import freestyleFP from '../../assets/images/reebok/workoutFP.png'
 import go from '../../assets/images/reebok/go.jpg'
 import flamingo from '../../assets/images/flamingo/flamingo.png'
 import eye from '../../assets/images/eye/eye.png'
+import eye2 from '../../assets/images/eye/eye_2.png'
+import eye3 from '../../assets/images/eye/eye_3.png'
+import eye4 from '../../assets/images/eye/eye_4.png'
+import eye5 from '../../assets/images/eye/eye_5.png'
+import eye6 from '../../assets/images/eye/eye_6.png'
+import eye7 from '../../assets/images/eye/eye_7.png'
+import eye8 from '../../assets/images/eye/eye_8.png'
+import eye9 from '../../assets/images/eye/eye_9.png'
 import adele from '../../assets/images/adele/adele.png'
+import adele2 from '../../assets/images/adele/adele_2.png'
+import adele3 from '../../assets/images/adele/adele_3.png'
+import adele4 from '../../assets/images/adele/adele_4.png'
+import adele5 from '../../assets/images/adele/adele_5.png'
+import adele6 from '../../assets/images/adele/adele_6.png'
+import adele7 from '../../assets/images/adele/adele_7.png'
+import adele8 from '../../assets/images/adele/adele_8.jpg'
 
 let array = {
 	f50: {
@@ -239,12 +254,44 @@ let array = {
 			}, 
 			{
 				title: "Blink of an Eye", 
-				description: "Blink of an Eye is an interactive pop-up window display conceived as a comment on the concept of Time, specifically the “right now” aspect of it. The big googly eye was on display at the NYU Skirball Center in Greenwich Village in Manhattan from November 8-14, 2016. People walking by were encouraged to text the eye their instagram handle. Once they did, the eye would blink then displayed rapid reel of their instagram feed then blink again and return to their blank state. It was an effort to show how fast time and memories can go by in a literal blink of an eye ( we love puns ). I was responsible for the software part of this project, mainly scraping instagram, making socket.io calls to the web and the motors, and making sure we received all the texts from Twillio.",
+				description: "Blink of an Eye is an interactive pop-up window display conceived as a comment on the concept of Time, specifically the “right now” aspect of it. The big googly eye was first on display at the NYU Skirball Center in Greenwich Village in Manhattan in November, 2016 and later travelled west to be a part of Twilio BA$H in San Francisco in May 2017. People walking by were encouraged to text the eye their instagram handle. Once they did, the eye would blink then displayed rapid reel of their instagram feed then blink again and return to their blank state. It was an effort to show how fast time and memories can go by in a literal blink of an eye ( we love puns ). I was responsible for the software part of this project, mainly scraping instagram, making socket.io calls to the web and the motors, and making sure we received all the texts from Twillio.",
 				type: "html"
 			},
 			{
 				src: "https://wipawe-portfolio.s3.amazonaws.com/eye.mp4",
 				type: "video"
+			},
+			{
+				src: eye2,
+				type: "image"
+			}, 
+			{
+				src: eye3,
+				type: "image"
+			},
+			{
+				src: eye4,
+				type: "image"
+			},
+			{
+				src: eye5,
+				type: "image"
+			},
+			{
+				src: eye6,
+				type: "image"
+			},
+			{
+				src: eye7,
+				type: "image"
+			},
+			{
+				src: eye8,
+				type: "image"
+			},
+			{
+				src: eye9,
+				type: "image"
 			}
 		],
 		name: "2016 | Interactive Pop Up Window Display - Blink of an Eye",
@@ -266,6 +313,34 @@ let array = {
 				title: "Call me Adele - A Romantic Data Visualization Piece",
 				description: "This is a personal project where I turned my sorrows into a dataset. I made a data visualization series to display the downfall of my relationship. Rather heartbreaking yet insightful, the dataset gathered from text messages between my ex-boyfriend and I seemed to know the relationship was doomed. You can read more about the process in the elaborated medium post I wrote, link below.",
 				type: "html"
+			},
+			{
+				src: adele2,
+				type: "image"
+			},
+			{
+				src: adele3,
+				type: "image"
+			},
+			{
+				src: adele4,
+				type: "image"
+			},
+			{
+				src: adele5,
+				type: "image"
+			},
+			{
+				src: adele6,
+				type: "image"
+			},
+			{
+				src: adele7,
+				type: "image"
+			},
+			{
+				src: adele8,
+				type: "image"
 			}
 		],
 		name: "2016 | Romantic Data Visualization - Call me Adele",
