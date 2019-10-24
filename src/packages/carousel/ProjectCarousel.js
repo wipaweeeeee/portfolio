@@ -3,7 +3,6 @@ import { Carousel } from 'react-responsive-carousel';
 import "./ProjectCarousel.scss";
 
 const ProjectCarousel = (props) => {
-	console.log(props.legend.legend)
 	let content = props.content && props.content.map((item, index) => {
 		return ( 
 			<React.Fragment key={index}>

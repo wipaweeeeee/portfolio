@@ -153,14 +153,6 @@ let array = {
 			{
 				src: "https://wipawe-portfolio.s3.amazonaws.com/freestyle.mp4",
 				type: "video"
-			},
-			{
-				src: "https://wipawe-portfolio.s3.amazonaws.com/vr_doc.mp4",
-				type: "video"
-			},
-			{
-				src: go,
-				type: "image"
 			}
 		],
 		name: "2018 | Reebok VR Experience",
@@ -262,14 +254,6 @@ let array = {
 				type: "video"
 			},
 			{
-				src: eye2,
-				type: "image"
-			}, 
-			{
-				src: eye3,
-				type: "image"
-			},
-			{
 				src: eye4,
 				type: "image"
 			},
@@ -279,18 +263,6 @@ let array = {
 			},
 			{
 				src: eye6,
-				type: "image"
-			},
-			{
-				src: eye7,
-				type: "image"
-			},
-			{
-				src: eye8,
-				type: "image"
-			},
-			{
-				src: eye9,
 				type: "image"
 			}
 		],
@@ -360,7 +332,12 @@ const Landing = (props) => {
 
 	const handleShowProject = (e, project) => {
 		setProject(project);
-		setContent(null);
+		console.log(project)
+		// setContent(null);
+	}
+
+	const clearProject = (e) => {
+		setProject(null)
 	}
 
 	const handleClick = (e, content) => {
@@ -387,6 +364,7 @@ const Landing = (props) => {
 						<a 
 							onClick={(e) => handleClick(e, array.f50)} 
 							onMouseOver={(e) => handleShowProject(e, f50)}
+							onMouseOut={(e) => clearProject(e)}
 							className={classNames({"active" : content && content.name === "2019 | frog 50"})}
 						>
 							frog50
@@ -396,6 +374,7 @@ const Landing = (props) => {
 						<a 
 							onClick={(e) => handleClick(e, array.vb)} 
 							onMouseOver={(e) => handleShowProject(e, vb)}
+							onMouseOut={(e) => clearProject(e)}
 							className={classNames({"active" : content && content.name === "2019 | Victoria Beckham x Reebok"})}
 						>
 							VB x Reebok
@@ -404,6 +383,7 @@ const Landing = (props) => {
 					<li><a 
 							onClick={(e) => handleClick(e, array.reebok)} 
 							onMouseOver={(e) => handleShowProject(e, reebok)}
+							onMouseOut={(e) => clearProject(e)}
 							className={classNames({"active" : content && content.name === "2018 | Reebok VR Experience"})}
 						>
 								Reebok
@@ -411,6 +391,7 @@ const Landing = (props) => {
 					<li><a 
 							onClick={(e) => handleClick(e, array.cc)} 
 							onMouseOver={(e) => handleShowProject(e, cc)}
+							onMouseOut={(e) => clearProject(e)}
 							className={classNames({"active" : content && content.name === "2015 - Present | Creative Coding Sketches"})}
 						>
 							Creative Coding
@@ -420,6 +401,7 @@ const Landing = (props) => {
 						<a
 							onClick={(e) => handleClick(e, array.flamingo)} 
 							onMouseOver={(e) => handleShowProject(e, flamingo)}
+							onMouseOut={(e) => clearProject(e)}
 							className={classNames({"active" : content && content.name === "2019 | Florida Blue Digital Member Portal"})}
 						>
 							Project Flamingo
@@ -429,6 +411,7 @@ const Landing = (props) => {
 						<a
 							onClick={(e) => handleClick(e, array.eye)} 
 							onMouseOver={(e) => handleShowProject(e, eye)}
+							onMouseOut={(e) => clearProject(e)}
 							className={classNames({"active" : content && content.name === "2016 | Interactive Pop Up Window Display - Blink of an Eye"})}
 						>
 							Blink of an Eye
@@ -438,6 +421,7 @@ const Landing = (props) => {
 						<a
 							onClick={(e) => handleClick(e, array.adele)} 
 							onMouseOver={(e) => handleShowProject(e, adele)}
+							onMouseOut={(e) => clearProject(e)}
 							className={classNames({"active" : content && content.name === "2016 | Romantic Data Visualization - Call me Adele"})}
 						>
 							Call me Adele
@@ -456,7 +440,7 @@ const Landing = (props) => {
 		</div>
 		<div className={classNames(styles.images, { [styles.carousel] : content != null})}>
 			<Mouse content={content && content.name}/>
-			{ content == null && 
+			{ project != null && 
 				<div className={styles.projectImage}>
 					<img src={project} />
 				</div>
