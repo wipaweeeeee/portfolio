@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Carousel } from 'react-responsive-carousel';
 import "./ProjectCarousel.scss";
 
@@ -14,6 +14,21 @@ const ProjectCarousel = (props) => {
 		)
 	})
 
+	const [ slide, setSlide ] = useState(0);
+	let max = props.content && props.content.length;
+
+	useEffect(() => {
+		setSlide(0);
+	},[props.name])
+
+	const handleClick = () => {
+		if (slide < max) {
+			setSlide(slide + 1);
+		} else { 
+			setSlide(0)
+		}
+	}
+
 	return (
 		<div className="carousel-container">
 			<div className="carousel-intro">{props.name}</div>
@@ -21,7 +36,10 @@ const ProjectCarousel = (props) => {
 				showThumbs={false}
 				infiniteLoop={true}
 				showIndicators={false}
-				showStatus={true}>
+				showStatus={true}
+				selectedItem={slide}
+				emulateTouch={true}
+				onChange={handleClick}>
 	            {content}
 	        </Carousel>
 	        <div className="carousel-legend">

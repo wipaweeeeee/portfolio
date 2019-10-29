@@ -21,7 +21,6 @@ import freestyleIntro from '../../assets/images/reebok/freestyle.gif'
 import workoutFP from '../../assets/images/reebok/freestyleFP.png'
 import pumpFP from '../../assets/images/reebok/pumpFP.png'
 import freestyleFP from '../../assets/images/reebok/workoutFP.png'
-import go from '../../assets/images/reebok/go.jpg'
 import flamingo from '../../assets/images/flamingo/flamingo.png'
 import eye from '../../assets/images/eye/eye.png'
 import eye2 from '../../assets/images/eye/eye_2.png'
@@ -29,9 +28,6 @@ import eye3 from '../../assets/images/eye/eye_3.png'
 import eye4 from '../../assets/images/eye/eye_4.png'
 import eye5 from '../../assets/images/eye/eye_5.png'
 import eye6 from '../../assets/images/eye/eye_6.png'
-import eye7 from '../../assets/images/eye/eye_7.png'
-import eye8 from '../../assets/images/eye/eye_8.png'
-import eye9 from '../../assets/images/eye/eye_9.png'
 import adele from '../../assets/images/adele/adele.png'
 import adele2 from '../../assets/images/adele/adele_2.png'
 import adele3 from '../../assets/images/adele/adele_3.png'
@@ -332,7 +328,6 @@ const Landing = (props) => {
 
 	const handleShowProject = (e, project) => {
 		setProject(project);
-		console.log(project)
 		// setContent(null);
 	}
 
