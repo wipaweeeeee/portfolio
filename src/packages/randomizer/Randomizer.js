@@ -6,7 +6,7 @@ const Randomizer = (props) => {
 
 	useEffect(() => {
 		chance = Math.floor(Math.random() * 10);
-		console.log(chance)
+		// console.log(chance)
 	},[])
 
 	const handleChance = () => {

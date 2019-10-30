@@ -23,8 +23,6 @@ import pumpFP from '../../assets/images/reebok/pumpFP.png'
 import freestyleFP from '../../assets/images/reebok/workoutFP.png'
 import flamingo from '../../assets/images/flamingo/flamingo.png'
 import eye from '../../assets/images/eye/eye.png'
-import eye2 from '../../assets/images/eye/eye_2.png'
-import eye3 from '../../assets/images/eye/eye_3.png'
 import eye4 from '../../assets/images/eye/eye_4.png'
 import eye5 from '../../assets/images/eye/eye_5.png'
 import eye6 from '../../assets/images/eye/eye_6.png'
@@ -45,7 +43,7 @@ let array = {
 			},
 			{
 			  title: "frog50",
-			  description: "Frog design turns 50 years old in 2019. We kicked off the year-long celebration in Austin, Texas during SXSW. The exhibition we curated included a frog50 AR app, 3 interactive mirrors and a redo (hack) of the original Apple IIc. I was responsible for concept and production of the frog50 app which its main goal is to bring second life to selected pieces from frog’s archive including the Yamaha frog 750, Apple IIc, Renee Magritte’s exhibition at SFMoma and LQD Palo. The augmented content tells back stories and take on each project in new exciting ways. We also made augmented tattoo of friedolin (the frog logo) so people can take it anywhere with them. Hartmut Esslinger (founder of frog) was seen rather delighted while he was playing with the app.",
+			  description: "frog design turns 50 years old in 2019. The year-long celebration started in Austin, Texas during SXSW. The exhibition included the frog50 AR app, 3 interactive mirrors and a redo (hack) of the original Apple IIc. I was responsible for concept and production of the frog50 app which its main goal is to bring second life to selected pieces from frog’s archive including the Yamaha frog 750, Apple IIc etc. We also made augmented tattoo of friedolin (the frog logo) so people can take it anywhere with them.",
 			  type: "html"
 			},
 			{
@@ -209,7 +207,7 @@ let array = {
 			},
 			{
 				title: "Florida Blue Digital Member Portal",
-				description: "Florida Blue came to frog for a digital face lift both visually and experientially. As for my part in the team, I was responsible for creating the design language system in code as well as the coded demo pages. The demo flows included registration, dashboard, navigation, find care, get care, visits, benefits, plan activity and discover your plan. Unfortunately, the only flow that is live as of now is the discover your plan flow which you will see in next slides. The rest is confidential and will remain locked content for now. The project was developed using React.",
+				description: "Florida Blue came to frog for a digital face lift both visually and experientially. As for my part in the team, I was responsible for creating the design language system in code as well as the coded demo pages. The demo flows included registration, dashboard, navigation, find care, get care, visits, benefits, plan activity and discover your plan. The only flow that is live now is discover your plan which you will see in next slides. The rest will remain locked content. The project was developed using React.",
 				type: "html"
 			},
 			{
@@ -328,7 +326,6 @@ const Landing = (props) => {
 
 	const handleShowProject = (e, project) => {
 		setProject(project);
-		// setContent(null);
 	}
 
 	const clearProject = (e) => {
@@ -341,108 +338,109 @@ const Landing = (props) => {
 
 	return (
 		<div className={styles.landing}>
-		<div className={styles.info}>
-			<div className={styles.intro}>
-				Wipawe here. <br />
-				[ pronounce wip-pah-wee] <br />
-				<span className="gray">People call me Wippy tho. </span><br />
-				I like to design as much as I like to code. <br />
-				Preferably, I would like to do both at the same time. 
-				People sometimes call this Design Technologist, or 
-				at least that’s what they call me at frog design. <br />
-				You can see some stuff I made here:
-			</div>
-
-			<div className={styles.nav}>
-				<ul>
-					<li>
-						<a 
-							onClick={(e) => handleClick(e, array.f50)} 
-							onMouseOver={(e) => handleShowProject(e, f50)}
-							onMouseOut={(e) => clearProject(e)}
-							className={classNames({"active" : content && content.name === "2019 | frog 50"})}
-						>
-							frog50
-						</a>
-					</li>
-					<li>
-						<a 
-							onClick={(e) => handleClick(e, array.vb)} 
-							onMouseOver={(e) => handleShowProject(e, vb)}
-							onMouseOut={(e) => clearProject(e)}
-							className={classNames({"active" : content && content.name === "2019 | Victoria Beckham x Reebok"})}
-						>
-							VB x Reebok
-						</a>
-						</li>
-					<li><a 
-							onClick={(e) => handleClick(e, array.reebok)} 
-							onMouseOver={(e) => handleShowProject(e, reebok)}
-							onMouseOut={(e) => clearProject(e)}
-							className={classNames({"active" : content && content.name === "2018 | Reebok VR Experience"})}
-						>
-								Reebok
-						</a></li>
-					<li><a 
-							onClick={(e) => handleClick(e, array.cc)} 
-							onMouseOver={(e) => handleShowProject(e, cc)}
-							onMouseOut={(e) => clearProject(e)}
-							className={classNames({"active" : content && content.name === "2015 - Present | Creative Coding Sketches"})}
-						>
-							Creative Coding
-						</a>
-					</li>
-					<li>
-						<a
-							onClick={(e) => handleClick(e, array.flamingo)} 
-							onMouseOver={(e) => handleShowProject(e, flamingo)}
-							onMouseOut={(e) => clearProject(e)}
-							className={classNames({"active" : content && content.name === "2019 | Florida Blue Digital Member Portal"})}
-						>
-							Project Flamingo
-						</a>
-					</li>
-					<li>
-						<a
-							onClick={(e) => handleClick(e, array.eye)} 
-							onMouseOver={(e) => handleShowProject(e, eye)}
-							onMouseOut={(e) => clearProject(e)}
-							className={classNames({"active" : content && content.name === "2016 | Interactive Pop Up Window Display - Blink of an Eye"})}
-						>
-							Blink of an Eye
-						</a>
-					</li>
-					<li>
-						<a
-							onClick={(e) => handleClick(e, array.adele)} 
-							onMouseOver={(e) => handleShowProject(e, adele)}
-							onMouseOut={(e) => clearProject(e)}
-							className={classNames({"active" : content && content.name === "2016 | Romantic Data Visualization - Call me Adele"})}
-						>
-							Call me Adele
-						</a>
-					</li>
-				</ul>
-			</div>
-
-			<div className={styles.footer}>
-				For more info: <br />
-				<a href="mailto:wsirikolkarn@gmail.com">wsirikolkarn@gmail.com</a><br />
-				<a href={resume} target="_blank">CV</a> | 
-				<a href="https://github.com/wipaweeeeee" target="_blank"> GH</a> | 
-				<a href="https://www.instagram.com/wipaweeeeee/" target="_blank"> IG</a>
-			</div>
-		</div>
-		<div className={classNames(styles.images, { [styles.carousel] : content != null})}>
-			<Mouse content={content && content.name}/>
-			{ project != null && 
-				<div className={styles.projectImage}>
-					<img src={project} />
+			<div className={styles.info}>
+				<div className={styles.intro}>
+					Wipawe here. <br />
+					[ pronounce wip-pah-wee ] <br />
+					<span className="gray">People call me Wippy tho. </span><br />
+					I like to design as much as I like to code. <br />
+					Preferably, I would like to do both at the same time. 
+					People sometimes call this Design Technologist, or 
+					at least that’s what they call me at frog design. <br />
+					You can see some stuff I made here:
 				</div>
-			}
-			{content && <ProjectCarousel content={content.content} name={content.name} legend={content.legend} app={content.app}/>}
-			<Randomizer/>
-		</div>
+
+				<div className={styles.nav}>
+					<ul>
+						<li>
+							<a 
+								onClick={(e) => handleClick(e, array.f50)} 
+								onMouseOver={(e) => handleShowProject(e, f50)}
+								onMouseOut={(e) => clearProject(e)}
+								className={classNames({"active" : content && content.name === "2019 | frog 50"})}
+							>
+								frog50
+							</a>
+						</li>
+						<li>
+							<a 
+								onClick={(e) => handleClick(e, array.vb)} 
+								onMouseOver={(e) => handleShowProject(e, vb)}
+								onMouseOut={(e) => clearProject(e)}
+								className={classNames({"active" : content && content.name === "2019 | Victoria Beckham x Reebok"})}
+							>
+								VB x Reebok
+							</a>
+							</li>
+						<li><a 
+								onClick={(e) => handleClick(e, array.reebok)} 
+								onMouseOver={(e) => handleShowProject(e, reebok)}
+								onMouseOut={(e) => clearProject(e)}
+								className={classNames({"active" : content && content.name === "2018 | Reebok VR Experience"})}
+							>
+									Reebok
+							</a></li>
+						<li><a 
+								onClick={(e) => handleClick(e, array.cc)} 
+								onMouseOver={(e) => handleShowProject(e, cc)}
+								onMouseOut={(e) => clearProject(e)}
+								className={classNames({"active" : content && content.name === "2015 - Present | Creative Coding Sketches"})}
+							>
+								Creative Coding
+							</a>
+						</li>
+						<li>
+							<a
+								onClick={(e) => handleClick(e, array.flamingo)} 
+								onMouseOver={(e) => handleShowProject(e, flamingo)}
+								onMouseOut={(e) => clearProject(e)}
+								className={classNames({"active" : content && content.name === "2019 | Florida Blue Digital Member Portal"})}
+							>
+								Project Flamingo
+							</a>
+						</li>
+						<li>
+							<a
+								onClick={(e) => handleClick(e, array.eye)} 
+								onMouseOver={(e) => handleShowProject(e, eye)}
+								onMouseOut={(e) => clearProject(e)}
+								className={classNames({"active" : content && content.name === "2016 | Interactive Pop Up Window Display - Blink of an Eye"})}
+							>
+								Blink of an Eye
+							</a>
+						</li>
+						<li>
+							<a
+								onClick={(e) => handleClick(e, array.adele)} 
+								onMouseOver={(e) => handleShowProject(e, adele)}
+								onMouseOut={(e) => clearProject(e)}
+								className={classNames({"active" : content && content.name === "2016 | Romantic Data Visualization - Call me Adele"})}
+							>
+								Call me Adele
+							</a>
+						</li>
+					</ul>
+				</div>
+
+				<div className={styles.footer}>
+					For more info: <br />
+					<a href="mailto:wsirikolkarn@gmail.com">wsirikolkarn@gmail.com</a><br />
+					<a href={resume} target="_blank">CV</a> | 
+					<a href="https://github.com/wipaweeeeee" target="_blank"> GH</a> | 
+					<a href="https://www.instagram.com/wipaweeeeee/" target="_blank"> IG</a>
+				</div>
+			</div>
+			<div className={classNames(styles.images, { [styles.carousel] : content != null})}>
+				<Mouse content={content && content.name}/>
+				{project && 
+					<div className={styles.projectImage}>
+						<img src={project} />
+					</div>
+				}
+				{ content && <ProjectCarousel content={content.content} name={content.name} legend={content.legend} app={content.app}/>
+				}
+				<Randomizer/>
+			</div>
 		</div>
 	)
 }
