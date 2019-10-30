@@ -240,7 +240,7 @@ let array = {
 			}, 
 			{
 				title: "Blink of an Eye", 
-				description: "Blink of an Eye is an interactive pop-up window display conceived as a comment on the concept of Time, specifically the “right now” aspect of it. The big googly eye was first on display at the NYU Skirball Center in Greenwich Village in Manhattan in November, 2016 and later travelled west to be a part of Twilio BA$H in San Francisco in May 2017. People walking by were encouraged to text the eye their instagram handle. Once they did, the eye would blink then displayed rapid reel of their instagram feed then blink again and return to their blank state. It was an effort to show how fast time and memories can go by in a literal blink of an eye ( we love puns ). I was responsible for the software part of this project, mainly scraping instagram, making socket.io calls to the web and the motors, and making sure we received all the texts from Twillio.",
+				description: "Blink of an Eye is an interactive pop-up window display. The big googly eye was first on display at the NYU Skirball Center in New York in November, 2016 and later travelled west to be a part of Twilio BA$H in San Francisco in May 2017. People walking by were encouraged to text their instagram handle to the eye. The eye would blink then displayed rapid reel of their instagram feed then blink again and return to its blank state. It was an effort to show how fast time can go by in a literal blink of an eye. I was responsible for the software part of this project, mainly scraping instagram, making socket.io calls, and connecting to Twillio.",
 				type: "html"
 			},
 			{
