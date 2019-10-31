@@ -6,6 +6,7 @@ import ReactGA from 'react-ga';
 function initializeReactGA() {
     ReactGA.initialize(process.env.REACT_APP_GA);
     ReactGA.pageview('/');
+    console.log("<3")
 }
 
 function App() {
