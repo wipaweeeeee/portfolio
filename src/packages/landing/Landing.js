@@ -34,6 +34,7 @@ import adele5 from '../../assets/images/adele/adele_5.png'
 import adele6 from '../../assets/images/adele/adele_6.png'
 import adele7 from '../../assets/images/adele/adele_7.png'
 import adele8 from '../../assets/images/adele/adele_8.jpg'
+import ReactGA from 'react-ga';
 
 let array = {
 	f50: {
@@ -334,6 +335,10 @@ const Landing = (props) => {
 
 	const handleClick = (e, content) => {
 		setContent({content: content.images, name: content.name, legend: content.legend});
+		ReactGA.event({
+		  category: 'Navigation',
+		  action: content.name
+		});
 	}
 
 	return (
