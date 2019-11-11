@@ -444,8 +444,8 @@ const Landing = (props) => {
 				}
 				{ content && <ProjectCarousel content={content.content} name={content.name} legend={content.legend} app={content.app}/>
 				}
-				<Randomizer/>
 			</div>
+			<Randomizer/>
 		</div>
 	)
 }
