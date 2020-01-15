@@ -4,6 +4,7 @@ import back from '../../assets/images/random/back.png';
 import tt_1 from '../../assets/images/random/totetube.jpg';
 import tt_2 from '../../assets/images/random/totetube_2.jpg';
 import tt_3 from '../../assets/images/random/totetube_3.jpg';
+import null_img from '../../assets/images/random/null_img.png';
 
 const Randomizer = (props) => {
 	// let chance;
@@ -26,6 +27,10 @@ const Randomizer = (props) => {
 	// 	}
 	// }
 
+	//<video autoPlay muted loop><source src="https://wipawe-portfolio.s3.amazonaws.com/null_promo.mp4" type="video/mp4"/></video>
+	//<video autoPlay muted loop><source src="https://wipawe-portfolio.s3.amazonaws.com/null_sm.mp4" type="video/mp4"/></video>
+						
+
 	const [ show, setShow ] = useState(false);
 
 	return (
@@ -44,9 +49,7 @@ const Randomizer = (props) => {
 							<h2>null</h2>
 							<h3>An Instagram filter, in collaboration with Eva Peng.</h3>
 						</div>
-						<video autoPlay muted loop><source src="https://wipawe-portfolio.s3.amazonaws.com/Spark_AR_Video_10secs_1.mp4" type="video/mp4"/></video>
-						<video autoPlay muted loop><source src="https://wipawe-portfolio.s3.amazonaws.com/null.mp4" type="video/mp4"/></video>
-						
+							<img src={null_img} alt="null" style={{width: '418px', height: 'auto'}}/>
 						<div className={styles.contentTitle}>
 							<h2>Totally Tubular</h2>
 							<h3>A skateboard made totally with tubes, in collaboration with Eva Peng.</h3>

@@ -10,6 +10,8 @@
 	position: absolute;
 	bottom: 40px;
 	right: 40px;
+	cursor: pointer;
+	z-index: 3;
 }
 
 @include keyframes (spin) {
@@ -28,6 +30,7 @@
 	width: 100%;
 	height: auto;
 	background-color: white;
+	z-index: 5;
 
 	img, video {
 		width: 900px;
