@@ -35,6 +35,7 @@ import adele6 from '../../assets/images/adele/adele_6.png'
 import adele7 from '../../assets/images/adele/adele_7.png'
 import adele8 from '../../assets/images/adele/adele_8.jpg'
 import ReactGA from 'react-ga';
+import Banner from '../border/index';
 
 let array = {
 	f50: {
@@ -343,6 +344,7 @@ const Landing = (props) => {
 
 	return (
 		<div className={styles.landing}>
+			<Banner />
 			<div className={styles.info}>
 				<div className={styles.intro}>
 					Wipawe here. <br />
