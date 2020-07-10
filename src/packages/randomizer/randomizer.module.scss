@@ -1,6 +1,5 @@
 @import '../../mixin.scss';
 
-
 .randomizer {
 	background-image: url("../../assets/images/archive.png");
 	width: 100px;
@@ -12,6 +11,13 @@
 	right: 40px;
 	cursor: pointer;
 	z-index: 3;
+
+	&:hover {
+		background-image: url("../../assets/images/archive.png");
+		width: 100px;
+		height: 100px;
+		background-size: contain;
+	}
 }
 
 @include keyframes (spin) {
@@ -23,56 +29,4 @@
 	.randomizer {
 		display: none;
 	}
-}
-
-.archiveContainer {
-	position: absolute;
-	width: 100%;
-	height: auto;
-	background-color: white;
-	z-index: 5;
-
-	img, video {
-		width: 900px;
-		height: 600px;
-		margin-bottom: 18px;
-	}
-
-	.back { 
-		width: 31px;
-		height: 17px;
-		margin: 0;
-		padding-right: 32px;
-		cursor: pointer;
-	}
-}
-
-.archiveTitle {
-	width: 100%;
-    padding: 32px 0;
-    border-bottom: 1px solid #E1E1E1;
-
-    .archiveTitleContent { 
-    	width: 900px; 
-    	display: flex;
-    	align-items: center;
-    	margin: 0 auto;
-
-    	p { font-size: 24px; }
-    }
-}
-
-
-.archiveContent {
-	margin-top: 32px;
-	display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.contentTitle {
-	width: 900px;
-	margin-bottom: 24px;
-	h2, h3 { font-weight: normal; margin: 0}
-	h3 { color: #696969; font-size: 1em;}
 }

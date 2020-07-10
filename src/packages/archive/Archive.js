@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react'; 
 import Masonry from 'react-masonry-css'
 import styles from './archive.module.scss';
+import classNames from 'classnames';
+import Banner from '../border/index';
 
 var Airtable = require('airtable');
 
@@ -18,7 +20,7 @@ const Archive = () => {
 
 	const retrieveContent = () => {
 		
-		var base = new Airtable({apiKey: 'keywJEKrRFRrPEmMI'}).base('appS0UCDSYim1dOsM');
+		var base = new Airtable({apiKey: process.env.REACT_APP_AIRTABLE_KEY}).base(process.env.REACT_APP_AIRTABLE_BASE);
 		base('Work').select().eachPage(function page(records, fetchNextPage) {
 
 		    records.forEach(function(record) {
@@ -47,7 +49,16 @@ const Archive = () => {
 		content.map((item, index) => {
 			if (item.fields.attachments) {
 				let src = item.fields.attachments[0].url;
-				masonry.push( <img key={index} src={src}/> )
+				let title = item.fields.title;
+				let description = item.fields.description;
+				masonry.push( 
+					<div className={styles.tile}>
+						<div className={styles.text}>
+							<p>{title}<br />{description}</p>
+						</div>
+						<img key={index} src={src}/> 
+					</div>
+				)
 			}
 			
 		})
@@ -64,7 +75,14 @@ const Archive = () => {
 	}
 
 	return (
-		<GenerateContent />
+		<div>
+			<Banner />
+			<div className={styles.intro}>
+				<a href="/">&larr; Back</a>
+				<h1>An archive of unpublished / unrelated / experimental work</h1>
+			</div>
+			<GenerateContent />
+		</div>
 	)
 }
 
