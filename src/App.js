@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import Landing from './packages/landing/Landing';
+import Home from './packages/home/Home';
 import Archive from './packages/archive/Archive';
 import ReactGA from 'react-ga';
 import {
@@ -20,7 +20,7 @@ function App() {
 
   return (
   	<HashRouter>
-    	<Route exact path="/" component={Landing} />
+    	<Route exact path="/" component={Home} />
     	<Route exact path="/archive" component={Archive} />
     </HashRouter>
   );

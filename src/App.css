@@ -8,13 +8,26 @@
     src: url('./assets/fonts/lunchtype22-regular-webfont.woff') format('woff');
     font-weight: normal;
     font-style: normal;
+}
 
+@font-face {
+    font-family: 'smReg';
+    src: url('./assets/fonts/sm.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'lausanne';
+    src: url('./assets/fonts/Lausanne-300.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
 }
 
 body, html, p {
   margin: 0;
   padding: 0;
-  font-family: lunchtype22regular;
+  font-family: 'lausanne';
 }
 
 a {
@@ -23,7 +36,7 @@ a {
 }
 
 a:hover, .active {
-  background: linear-gradient(to top, #CCFF00 50%, transparent 50%);
+  /*background: linear-gradient(to top, #CCFF00 50%, transparent 50%);*/
 }
 
 a.noLine:hover {

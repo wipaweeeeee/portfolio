@@ -1,0 +1,73 @@
+.home {
+	height: 100vh;
+}
+
+.intro {
+	height: 20%;
+	border-bottom: 1px solid #4b4b4b;
+	margin-top: 30px;
+	padding: 20px;
+	display: flex;
+	justify-content: space-between;
+
+	.left {
+		display: flex;
+		flex-direction: column;
+
+		.name {
+			font-family: 'smReg';
+			font-size: 24px;
+		}
+
+		.sub {
+			font-size: 12px;
+			opacity: 50%;
+		}
+	}
+
+	.right {
+		position: relative;
+	}
+}
+
+.listContainer {
+	height: 80%;
+
+	.listItem {
+		padding: 32px 20px;
+		border-bottom: 1px solid #4b4b4b;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		cursor: pointer;
+		opacity: 0.3;
+		transition: opacity 200ms ease-in;
+
+		.title {
+			font-family: 'smReg';
+			font-size: 60px;
+		}
+
+		.year {
+			font-size: 32px;
+		}
+
+		&.focus {
+			opacity: 1;
+			transition: opacity 200ms ease-in;
+		}
+	}
+}
+
+.focusImage {
+	position: fixed;
+	top: 20%;
+	right: 10%;
+	width: 52%;
+	height: 74%;
+	
+	img {
+		width: 100%;
+	}
+}
+

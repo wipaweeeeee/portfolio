@@ -5,12 +5,12 @@
 	width: 100px;
 	height: 100px;
 	background-size: contain;
-	@include animate(spin, 20s, infinite, none, linear);
+	@include animate(spin, 60s, infinite, none, linear);
 	position: absolute;
-	bottom: 40px;
-	right: 40px;
+	bottom: 20px;
+	right: 0px;
 	cursor: pointer;
-	z-index: 3;
+	z-index: 1;
 
 	&:hover {
 		background-image: url("../../assets/images/archive.png");
@@ -27,6 +27,6 @@
 
 @media only screen and (max-width: 600px) { 
 	.randomizer {
-		display: none;
+		// display: none;
 	}
 }

@@ -6,7 +6,7 @@
     background-color: #CCFF00;
     overflow: hidden;
     white-space: nowrap;
-    position: absolute;
+    position: fixed;
     z-index: 2;
     top: 0;
 }
@@ -21,7 +21,7 @@
 }
 
 .animate {
-	@include animate(slideIn, 24s, infinite, none, linear);
+	@include animate(slideIn, 36s, infinite, none, linear);
 }
 
 @include keyframes (slideIn) {
