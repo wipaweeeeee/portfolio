@@ -3,12 +3,14 @@ import styles from './styles.module.scss';
 import classNames from 'classnames';
 import Banner from '../border/index';
 import Randomizer from '../randomizer/Randomizer';
+import Details from '../details/Details';
 
 const Home = (props) => {
 
 	const [ content, setContent ] = useState([]);
 	const [ focus, setFocus ] = useState();
 	const [ focusImage, setFocusImage ] = useState();
+	const [ showDetails, setShowDetails ] = useState(false);
 
 	useEffect(() => {
 		fetch(`https://api.airtable.com/v0/${process.env.REACT_APP_AIRTABLE_BASE}/Homepage?api_key=${process.env.REACT_APP_AIRTABLE_KEY}`)
@@ -26,34 +28,40 @@ const Home = (props) => {
         .catch(error => console.log(error));
 	}, [])
 
-	useEffect(() => {
-
-		let focusItem = content && content.filter(item => item.title === focus)[0];
-		if (focusItem !== undefined) {
-			setFocusImage(focusItem.image[0].url);
-		} else {
-			setFocusImage(null);
-		}
-		
-
-	}, [focus])
-
 	let listItem = content && content.map((item, index) => {
 		return (
-			<a key={index} 
+			<div key={index} 
 				className={classNames(
 					styles.listItem, 
 					{ [styles.focus]: focus === item.title },
 					{ [styles.focus]: focus == null }
 				)} 
-				onMouseOver={() => setFocus(item.title)}>
+				onMouseOver={() => setFocus(item.title)}
+				onClick={() => setShowDetails(true)}>
 				<span className={styles.title}>{item.title}</span>
 				<span className={styles.year}>{item.year}</span>
-			</a>
+			</div>
 		)
 	})
 
+	let listImage = content && content.map((item, index) => {
+		return (
+			<img key={index} className={item.title === focus ? styles.focus : null} src={item.hero && item.hero[0].url} />
+		)
+	})
+
+	useEffect(() => {
+
+		if (showDetails) {
+			document.body.style.overflow = 'hidden';
+		}
+		
+     	return () => document.body.style.overflow = 'unset';
+
+	}, [ showDetails ])
+
 	return (
+		<React.Fragment>
 		<div className={styles.home}>
 			<Banner />
 			<div className={styles.intro} onMouseOver={() => setFocus(null)}>
@@ -70,9 +78,11 @@ const Home = (props) => {
 				{listItem}
 			</div>
 			<div className={styles.focusImage}>
-				<img src={focusImage} />
+				{listImage}
 			</div>
 		</div>
+		<Details close={() => setShowDetails(false)} show={showDetails} content={content.filter(item => item.title === focus)}/>
+		</React.Fragment>
 	)
 }
 
