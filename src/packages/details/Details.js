@@ -50,7 +50,7 @@ const Details = (props) => {
 					}
 					{
 						heroType && heroType.indexOf("video") > -1 && 
-						<video muted autoPlay src={hero} />
+						<video muted playsInline autoPlay loop src={hero} />
 					}
 				</div>
 				{

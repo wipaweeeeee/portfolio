@@ -10,7 +10,7 @@ import Banner from './packages/border/index';
 function initializeReactGA() {
     ReactGA.initialize(process.env.REACT_APP_GA);
     ReactGA.pageview('/');
-    console.log("<3")
+    console.log("<3<3")
 }
 
 function App() {
