@@ -24,18 +24,15 @@ const Archive = () => {
 		base('Work').select().eachPage(function page(records, fetchNextPage) {
 
 		    records.forEach(function(record) {
-		    	let type = record.get('type');
-		    	if (type === "archive") {
-		    		allContent.push(record);
-		    	}
+		    	allContent.push(record);
 		    });
 
 		    fetchNextPage();
 
 		}, function done(err) {
 		    if (err) { console.error(err); return; }
-		    setContent(allContent);
-
+		    setContent(allContent.sort((a,b) => a.fields.order - b.fields.order));
+ 
 		});
 	}	
 
@@ -43,6 +40,9 @@ const Archive = () => {
 		retrieveContent();
 	}, []);
 	
+
+	console.log(content)
+
 	const GenerateContent = () => {
 		let masonry = [];
 
@@ -52,7 +52,7 @@ const Archive = () => {
 				let title = item.fields.title;
 				let description = item.fields.description;
 				masonry.push( 
-					<div className={styles.tile}>
+					<div key={index} className={styles.tile}>
 						<div className={styles.text}>
 							<p>{title}<br />{description}</p>
 						</div>

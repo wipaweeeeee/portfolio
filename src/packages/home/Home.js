@@ -1,76 +1,50 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import styles from './styles.module.scss';
 import classNames from 'classnames';
-import Banner from '../border/index';
 import Randomizer from '../randomizer/Randomizer';
-import Details from '../details/Details';
+import Resume from '../../assets/images/wipawe_resume2022.pdf'
 
 const Home = (props) => {
 
-	const [ content, setContent ] = useState([]);
 	const [ focus, setFocus ] = useState();
 	const [ focusImage, setFocusImage ] = useState();
-	const [ showDetails, setShowDetails ] = useState(false);
+	const [ showDetail, setShowDetail ] = useState(false);
 
-	useEffect(() => {
-		fetch(`https://api.airtable.com/v0/${process.env.REACT_APP_AIRTABLE_BASE}/Homepage?api_key=${process.env.REACT_APP_AIRTABLE_KEY}`)
-        .then(res => res.json())
-        .then(data => data.records)
-        .then(rec => {
-          let _data = [];
-          rec.forEach(item => {
-            _data.push(item.fields)
-          })
+	const detail = useRef(null);
 
-          return _data;
-        })
-        .then(dataset => setContent(dataset.sort((a,b) => b.year - a.year)))
-        .catch(error => console.log(error));
-	}, [])
-
-	let listItem = content && content.map((item, index) => {
+	let listItem = props.content && props.content.map((item, index) => {
 		return (
-			<div key={index} 
+			<a key={index} 
 				className={classNames(
 					styles.listItem, 
 					{ [styles.focus]: focus === item.title },
 					{ [styles.focus]: focus == null }
 				)} 
 				onMouseOver={() => setFocus(item.title)}
-				onClick={() => setShowDetails(true)}>
+				href={`/#/${item.title.toLowerCase()}`}>
 				<span className={styles.title}>{item.title}</span>
 				<span className={styles.year}>{item.year}</span>
-			</div>
+			</a>
 		)
 	})
 
-	let listImage = content && content.map((item, index) => {
+	let listImage = props.content && props.content.map((item, index) => {
 		return (
 			<img key={index} className={item.title === focus ? styles.focus : null} src={item.hero && item.hero[0].url} />
 		)
 	})
 
-	useEffect(() => {
-
-		if (showDetails) {
-			document.body.style.overflow = 'hidden';
-		}
-		
-     	return () => document.body.style.overflow = 'unset';
-
-	}, [ showDetails ])
-
 	return (
-		<React.Fragment>
 		<div className={styles.home}>
-			<Banner />
 			<div className={styles.intro} onMouseOver={() => setFocus(null)}>
 				<div className={styles.left}>
-					<span className={styles.name}>Wipawe here.</span>
-					<span className={styles.sub}>[ pronounce wip-pah-wee ] People call me Wippy tho.</span>
+					<div>
+						<span className={styles.name}>Wipawe here.</span>
+						<span className={styles.sub}>[ pronounce wip-pah-wee ] People call me Wippy tho.</span>
+					</div>
+					<div className={styles.link} onClick={() => setShowDetail(!showDetail)}>🔗</div>
 				</div>
 				<div className={styles.right}>
-					<span>8°C</span>
 					<Randomizer/>
 				</div>
 			</div>
@@ -80,9 +54,27 @@ const Home = (props) => {
 			<div className={styles.focusImage}>
 				{listImage}
 			</div>
+			<div className={classNames(styles.detail, {[styles.show] : showDetail})} ref={detail}>
+				<div className={styles.back} onClick={() => setShowDetail(false)}>&rarr; Back</div>
+				<p>
+					Creative Technologist currently @ Peloton. <br /> 
+					Bangkok born, Brooklyn Based, citizen of the world wide web. <br /> 
+					Always looking for new troubles to make life worthwhile. 
+				</p>
+				<div className={styles.links}>
+					<span>Links</span>
+					<div>	
+						<a href={Resume} target="_blank">Resume</a>
+						<a href="https://www.linkedin.com/in/wipawesirikolkarn/" target="_blank">LinkedIn</a>
+						<a href="mailto:wsirikolkarn@gmail.com" target="_blank">Email</a>
+					</div>
+					<div>	
+						<a href="https://www.instagram.com/wipaweeeeee/" target="_blank">Instagram</a>
+						<a href="https://github.com/wipaweeeeee" target="_blank">Github</a>
+					</div>
+				</div>
+			</div>
 		</div>
-		<Details close={() => setShowDetails(false)} show={showDetails} content={content.filter(item => item.title === focus)}/>
-		</React.Fragment>
 	)
 }
 
