@@ -1,0 +1,187 @@
+.detailsContainer {
+	padding-top: 30px;
+
+	.intro {
+		display: flex;
+		justify-content: space-between;
+		padding: 20px;
+		width: calc(100% - 40px);
+		min-height: 15vh;
+
+		.left {
+			width: 20%;
+			display: flex;
+			flex-direction: column;
+			justify-content: space-between;
+		}
+
+		.mid {
+			width: 60%;
+		}
+
+		.right {
+			width: 18%;
+			display: flex;
+			flex-direction: column;
+			align-items: flex-end;
+			text-align: right;
+
+			.body {
+				padding-left: 20px;
+			}
+		}
+
+		.label {
+			display: block;
+			font-family: 'smReg';
+			font-size: 20px;
+			margin-bottom: 4px;
+		}
+
+		.labelSm {
+			display: block;
+			font-family: 'smReg';
+			font-size: 16px;
+			margin-bottom: 4px;
+		}
+
+		.title {
+			font-size: 24px;
+			margin-bottom: 24px;
+		}
+
+		.body {
+			font-size: 16px;
+		}
+
+		.bodySm {
+			font-size: 12px;
+		}
+	}
+
+	.images {
+		.hero {
+			height: 500px;
+			width: 100%;
+			position: relative;
+
+			img {
+				height: 100%;
+				width: auto;
+				position: absolute;
+    			left: 50%;
+    			top: 50%;
+    			transform: translate(-50%, -50%);
+			}
+
+			video {
+				height: 80%;
+				width: auto;
+				position: absolute;
+    			left: 50%;
+    			top: 50%;
+    			transform: translate(-50%, -50%);
+			}
+		}
+
+		.grid {
+			width: 70%;
+			padding: 20px;
+			margin: auto;
+			max-width: 1280px;
+			display: flex;
+			justify-content: space-between;
+			flex-wrap: wrap;
+
+			.gridItem {
+				width: calc(50% - 20px);
+
+				img {
+					width: 100%;
+				}
+
+				&:nth-child(odd){
+					margin-top: -10%;
+				}
+
+				&:nth-child(even){
+					margin-top: 30%;
+				}
+
+				&:first-child {
+					margin-top: 0;
+				}
+			}
+		}
+	}
+}
+
+//phone
+@media only screen and (max-width: 768px) {  
+	.detailsContainer { 
+		.intro { 
+			flex-wrap: wrap;
+
+			.label {
+				font-size: 16px;
+			}
+ 
+			.title {
+				font-size: 20px;
+			}
+
+			.left {
+				width: 60%;
+
+				a {
+					margin-top: 24px;
+				}
+			}
+
+			.right {
+				width: 40%;
+			}
+
+			.body {
+				font-size: 14px;
+			}
+
+			.mid {
+				margin-top: 24px;
+				width: 100%;
+				order: 2;
+			}
+		}
+
+		.images {
+			.hero {
+				height: 320px;
+
+				video {
+					height: auto;
+    				width: 90%;
+				}
+			}
+
+			.grid {
+				width: calc(100% - 40px);
+
+				.gridItem {
+					width: 100%;
+
+					&:nth-child(odd){
+						margin-top: 12px;
+					}
+
+					&:nth-child(even){
+						margin-top: 12px;
+					}
+
+					&:first-child {
+						margin-top: 0;
+					}
+				}
+			}
+		}
+	}
+}

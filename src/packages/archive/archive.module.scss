@@ -1,0 +1,70 @@
+.grid {
+	display: flex;
+  	margin-right: 40px; /* gutter size offset */
+  	width: auto;
+}
+
+.column {
+	padding-left: 40px; /* gutter size */
+  	background-clip: padding-box;
+
+	img {
+		margin-bottom: 30px;
+		// max-width: 400px;
+		width: 100%;
+	}
+}
+
+.intro {
+	margin: 120px 40px 60px;
+
+	a { color: #696969; }
+
+	h1 {
+		font-weight: normal;
+		font-size: 20px;
+	}
+}
+
+.text {
+	display: none;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    z-index: 1;
+    font-size: 20px;
+    opacity: 0;
+}
+
+.tile {
+	position: relative;
+
+	&:hover {
+		.text {
+			display: flex;
+			animation-name: hoverText;
+  			animation-duration: 0.5s;
+  			opacity: 1;
+		}
+
+		img {
+			animation-name: hover;
+  			animation-duration: 0.5s;
+  			opacity: 0.2;
+		}
+	}
+}
+
+@keyframes hover {
+  from {opacity: 1;}
+  to {opacity: 0.2}
+}
+
+@keyframes hoverText {
+  from {opacity: 0;}
+  to {opacity: 1}
+}
+

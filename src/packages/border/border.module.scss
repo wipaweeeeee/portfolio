@@ -6,8 +6,9 @@
     background-color: #CCFF00;
     overflow: hidden;
     white-space: nowrap;
-    position: absolute;
-    z-index: 2;
+    position: fixed;
+    z-index: 4;
+    top: 0;
 }
 
 .borderText {
@@ -20,7 +21,7 @@
 }
 
 .animate {
-	@include animate(slideIn, 24s, infinite, none, linear);
+	@include animate(slideIn, 36s, infinite, none, linear);
 }
 
 @include keyframes (slideIn) {
