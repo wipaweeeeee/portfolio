@@ -5,14 +5,13 @@
   "dependencies": {
     "airtable": "^0.8.1",
     "classnames": "^2.2.6",
-    "node-sass": "^4.12.0",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-ga": "^2.7.0",
     "react-masonry-css": "^1.0.14",
     "react-responsive-carousel": "^3.1.50",
     "react-router-dom": "^5.2.0",
-    "react-scripts": "3.0.1"
+    "react-scripts": "^5.0.1"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -39,6 +38,8 @@
   },
   "homepage": "http://www.wipawe.com/",
   "devDependencies": {
-    "gh-pages": "^2.1.1"
+    "gh-pages": "^2.1.1",
+    "sass": "^1.58.0",
+    "sass-loader": "^13.2.0"
   }
 }

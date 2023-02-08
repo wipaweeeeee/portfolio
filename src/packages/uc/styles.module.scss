@@ -1,0 +1,18 @@
+.uc {
+	height: 100vh;
+	background: #CCFF00;
+	font-family: 'TitlingGothicFBExtendedBlack';
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	text-transform: uppercase;
+
+	.link {
+		&:hover {
+			text-decoration: underline;
+		}
+	}
+}
+
+
