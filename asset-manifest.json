@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.044d2b7d.css",
-    "main.js": "/static/js/main.24aa0432.js",
+    "main.js": "/static/js/main.d0aed77f.js",
     "static/media/wipawe_resume2022.pdf": "/static/media/wipawe_resume2022.7c94950027f61e3fe85f.pdf",
     "static/media/lunchtype22-regular-webfont.woff": "/static/media/lunchtype22-regular-webfont.27ed243f3c90085f564f.woff",
     "static/media/Lausanne-300.woff": "/static/media/Lausanne-300.5b58521862f6c0dc31c7.woff",
@@ -9,10 +9,10 @@
     "static/media/sm.woff": "/static/media/sm.9c71973f728254fa025c.woff",
     "index.html": "/index.html",
     "main.044d2b7d.css.map": "/static/css/main.044d2b7d.css.map",
-    "main.24aa0432.js.map": "/static/js/main.24aa0432.js.map"
+    "main.d0aed77f.js.map": "/static/js/main.d0aed77f.js.map"
   },
   "entrypoints": [
     "static/css/main.044d2b7d.css",
-    "static/js/main.24aa0432.js"
+    "static/js/main.d0aed77f.js"
   ]
 }
