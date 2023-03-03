@@ -41,14 +41,15 @@ const Archive = () => {
 	}, []);
 	
 
-	console.log(content)
+	// console.log(content)
 
 	const GenerateContent = () => {
 		let masonry = [];
 
 		content.map((item, index) => {
 			if (item.fields.attachments) {
-				let src = item.fields.attachments[0].url;
+				// let src = item.fields.attachments[0].url;
+				let src = "/images/archive/" + item.fields.attachments[0].filename;
 				let title = item.fields.title;
 				let description = item.fields.description;
 				masonry.push( 

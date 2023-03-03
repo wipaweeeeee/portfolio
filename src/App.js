@@ -36,12 +36,10 @@ function App() {
         .catch(error => console.log(error));
   }, [])
 
-  //<Banner />
-  // <Route exact path="/" render={(props) => <Home {...props} content={content} />}/>
-
   return (
   	<HashRouter>
-      <Route exact path="/" render={(props) => <UC {...props} content={content} />}/>
+      <Banner />
+      <Route exact path="/" render={(props) => <Home {...props} content={content} />}/>
     	<Route exact path="/archive" component={Archive} />
       <Route exact path="/peloton" render={(props) => <Details {...props} content={content.filter(item => item.title === 'Peloton')} />} />
       <Route exact path="/mejuri" render={(props) => <Details {...props} content={content.filter(item => item.title === 'Mejuri')} />} />

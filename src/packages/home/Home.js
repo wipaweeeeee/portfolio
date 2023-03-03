@@ -28,9 +28,16 @@ const Home = (props) => {
 		)
 	})
 
+	// let listImage = props.content && props.content.map((item, index) => {
+	// 	return (
+	// 		<img key={index} className={item.title === focus ? styles.focus : null} src={item.hero && item.hero[0].url} />
+	// 	)
+	// })
+
 	let listImage = props.content && props.content.map((item, index) => {
+		let src = item.title.toLowerCase().replaceAll(" ", "-");
 		return (
-			<img key={index} className={item.title === focus ? styles.focus : null} src={item.hero && item.hero[0].url} />
+			<img key={index} className={item.title === focus ? styles.focus : null} src={`/images/hero/${src}.png`} />
 		)
 	})
 
@@ -58,7 +65,7 @@ const Home = (props) => {
 				<div className={styles.back} onClick={() => setShowDetail(false)}>&rarr; Back</div>
 				<p>
 					Creative Technologist currently @ Peloton. <br /> 
-					Bangkok born, Brooklyn Based, citizen of the world wide web. <br /> 
+					Bangkok-born, Brooklyn-based, citizen of the world wide web. <br /> 
 					Always looking for new troubles to make life worthwhile. 
 				</p>
 				<div className={styles.links}>
