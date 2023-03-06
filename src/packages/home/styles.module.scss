@@ -41,7 +41,7 @@
 	height: 80%;
 
 	.listItem {
-		padding: 32px 20px;
+		padding: 24px 20px;
 		border-bottom: 1px solid #4b4b4b;
 		display: flex;
 		justify-content: space-between;
@@ -52,12 +52,12 @@
 
 		.title {
 			font-family: 'smReg';
-			font-size: 60px;
+			font-size: 56px;
 			cursor: pointer;
 		}
 
 		.year {
-			font-size: 32px;
+			font-size: 28px;
 		}
 
 		&.focus {
@@ -70,7 +70,7 @@
 
 .focusImage {
 	position: fixed;
-	top: 20%;
+	top: 15%;
 	right: 10%;
 	width: 48%;
 	height: 74%;

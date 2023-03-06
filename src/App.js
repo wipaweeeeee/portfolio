@@ -42,6 +42,8 @@ function App() {
       <Route exact path="/" render={(props) => <Home {...props} content={content} />}/>
     	<Route exact path="/archive" component={Archive} />
       <Route exact path="/peloton" render={(props) => <Details {...props} content={content.filter(item => item.title === 'Peloton')} />} />
+      <Route exact path="/pivot" render={(props) => <Details {...props} content={content.filter(item => item.title === 'Pivot')} />} />
+      <Route exact path="/portfolio night" render={(props) => <Details {...props} content={content.filter(item => item.title === 'Portfolio Night')} />} />
       <Route exact path="/mejuri" render={(props) => <Details {...props} content={content.filter(item => item.title === 'Mejuri')} />} />
       <Route exact path="/sxsw frog50" render={(props) => <Details {...props} content={content.filter(item => item.title === 'SXSW frog50')} />} />
       <Route exact path="/venice biennale" render={(props) => <Details {...props} content={content.filter(item => item.title === 'Venice Biennale')} />} />
