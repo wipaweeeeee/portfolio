@@ -19,22 +19,26 @@ const Archive = () => {
 	var allContent = [];
 
 	const retrieveContent = () => {
+
+		const base = new Airtable({apiKey: `${process.env.REACT_APP_AIRTABLE_TOKEN}`}).base(`${process.env.REACT_APP_AIRTABLE_BASE}`);
+		const table = base('Work');
+
+		table.select({
+		view: 'Grid view'
+		}).firstPage( function(err, records) {
+		if (err) { console.error(err); return; }
+
+		let _data = [];
+
+		records.forEach(function(record) {
+			// console.log(record.fields)
+			_data.push(record.fields)
+		})
+
+      	setContent(_data.sort((a,b) => a.order - b.order))
 		
-		var base = new Airtable({apiKey: process.env.REACT_APP_AIRTABLE_KEY}).base(process.env.REACT_APP_AIRTABLE_BASE);
-		base('Work').select().eachPage(function page(records, fetchNextPage) {
-
-		    records.forEach(function(record) {
-		    	allContent.push(record);
-		    });
-
-		    fetchNextPage();
-
-		}, function done(err) {
-		    if (err) { console.error(err); return; }
-		    setContent(allContent.sort((a,b) => a.fields.order - b.fields.order));
- 
-		});
-	}	
+	}) 
+}
 
 	useEffect(() => {
 		retrieveContent();
@@ -47,11 +51,11 @@ const Archive = () => {
 		let masonry = [];
 
 		content.map((item, index) => {
-			if (item.fields.attachments) {
-				// let src = item.fields.attachments[0].url;
-				let src = "/images/archive/" + item.fields.attachments[0].filename;
-				let title = item.fields.title;
-				let description = item.fields.description;
+			if (item.attachments) {
+				// let src = item.attachments[0].url;
+				let src = "/images/archive/" + item.attachments[0].filename;
+				let title = item.title;
+				let description = item.description;
 				masonry.push( 
 					<div key={index} className={styles.tile}>
 						<div className={styles.text}>

@@ -7,6 +7,7 @@ import ReactGA from 'react-ga';
 import { Route,HashRouter } from "react-router-dom";
 import Details from './packages/details/Details';
 import Banner from './packages/border/index';
+import Airtable from 'airtable';
 
 function initializeReactGA() {
     ReactGA.initialize(process.env.REACT_APP_GA);
@@ -21,19 +22,26 @@ function App() {
   const [ content, setContent ] = useState([]);
 
   useEffect(() => {
-    fetch(`https://api.airtable.com/v0/${process.env.REACT_APP_AIRTABLE_BASE}/Homepage?api_key=${process.env.REACT_APP_AIRTABLE_KEY}`)
-        .then(res => res.json())
-        .then(data => data.records)
-        .then(rec => {
-          let _data = [];
-          rec.forEach(item => {
-            _data.push(item.fields)
-          })
 
-          return _data;
-        })
-        .then(dataset => setContent(dataset.sort((a,b) => b.year - a.year)))
-        .catch(error => console.log(error));
+    const base = new Airtable({apiKey: `${process.env.REACT_APP_AIRTABLE_TOKEN}`}).base(`${process.env.REACT_APP_AIRTABLE_BASE}`);
+    const table = base('Homepage');
+
+    table.select({
+      view: 'Grid view'
+    }).firstPage( function(err, records) {
+      if (err) { console.error(err); return; }
+
+      let _data = [];
+
+      records.forEach(function(record) {
+        // console.log(record.fields)
+        _data.push(record.fields)
+      })
+
+      setContent(_data.sort((a,b) => b.year - a.year))
+
+      
+    })
   }, [])
 
   return (
